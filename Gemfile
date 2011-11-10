@@ -2,10 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 gem 'spree'
-gem 'spree_pages', :git => 'git://github.com/sebastyuiop/spree_pages.git', :ref => '8509cb30d7c337700341'
-gem 'spree_editor'
-
-gem 'sqlite3'
+gem 'mysql2', '0.2.17'
 
 group :development, :test do
 
