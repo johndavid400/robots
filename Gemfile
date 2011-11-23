@@ -1,8 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
-gem 'spree'
-gem 'mysql2', '0.2.17'
+gem 'spree', '0.60.3'
+#gem 'mysql2', '0.2.17'
+gem 'sqlite3'
+gem 'heroku'
 
 group :development, :test do
 
