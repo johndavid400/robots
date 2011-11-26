@@ -1,10 +1,9 @@
-class RobotsController < ApplicationController
+class RobotsController < Spree::BaseController
   def index
     @robots = Robot.all
   end
 
   def show
-    @robot = Robot.find(params[:id])
   end
 
   def new

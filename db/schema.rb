@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110314192118) do
+ActiveRecord::Schema.define(:version => 20111126032109) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -385,6 +385,15 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.integer  "order_id"
     t.text     "reason"
     t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "robots", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.string   "type"
+    t.boolean  "featured"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
