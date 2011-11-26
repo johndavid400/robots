@@ -392,7 +392,7 @@ ActiveRecord::Schema.define(:version => 20111126032109) do
   create_table "robots", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.string   "type"
+    t.string   "robot_type"
     t.boolean  "featured"
     t.datetime "created_at"
     t.datetime "updated_at"

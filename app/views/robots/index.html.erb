@@ -1,2 +1,14 @@
-<h1>Robots#index</h1>
-<p>Find me in app/views/robots/index.html.erb</p>
+<h1>Robots</h1>
+
+<% if @robots.nil? %>
+  <h2>Please Check back later!</h2>
+<% else %>
+  <ul>
+    <% @robots.each do |r| %>
+      <li><%= r.name %></li>
+      <li><%= r.robot_type %></li>
+      <li><%= r.user.email %></li>
+    <% end %>
+  </ul>
+<% end %>
+

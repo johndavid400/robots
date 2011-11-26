@@ -3,7 +3,7 @@ class CreateRobots < ActiveRecord::Migration
     create_table :robots do |t|
       t.string :name
       t.integer :user_id
-      t.string :type
+      t.string :robot_type
       t.boolean :featured
 
       t.timestamps

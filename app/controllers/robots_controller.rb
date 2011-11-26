@@ -1,9 +1,12 @@
 class RobotsController < Spree::BaseController
+
   def index
     @robots = Robot.all
   end
 
   def show
+    redirect_to robots_path
+    @robot = Robot.find(params[:id])
   end
 
   def new

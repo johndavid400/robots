@@ -1,5 +1,5 @@
 Robots::Application.routes.draw do
-  resource :robots
+  resources :robots
   get "home/index"
   root :to => 'home#index'
 end
