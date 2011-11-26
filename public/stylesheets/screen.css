@@ -272,7 +272,7 @@ div.right {
 }
 a { outline: none; }
 #wrapper {
-  background: white;
+  background: transparent url(../images/wrapper-back.png) top center no-repeat;
   padding: 25px 20px 20px;
   position: relative;
 }
@@ -281,8 +281,6 @@ body.two-col #wrapper { background-image: url(../images/wrapper-back-2.png); }
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
-  display: block;
-  z-index: -4;
 }
 #sidebar {
   display: inline;

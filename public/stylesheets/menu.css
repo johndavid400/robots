@@ -35,6 +35,7 @@
 	margin-right:30px;
 	margin-top:7px;
 	border:none;
+  z-index: 4;
 }
 
 #menu li:hover {
