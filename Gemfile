@@ -27,3 +27,5 @@ group :development, :test do
   gem "webrat"
 
 end
+
+gem 'spree_articles', :path => 'vendor/extensions/spree_articles'

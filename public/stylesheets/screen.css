@@ -272,7 +272,8 @@ div.right {
 }
 a { outline: none; }
 #wrapper {
-  background: transparent url(../images/wrapper-back.png) top center no-repeat;
+  border-radius: 15px;
+  background: white;
   padding: 25px 20px 20px;
   position: relative;
 }

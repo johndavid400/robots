@@ -1,3 +1,9 @@
+PATH
+  remote: vendor/extensions/spree_articles
+  specs:
+    spree_articles (0.60.0)
+      spree_core (>= 0.60.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -37,11 +43,11 @@ GEM
     archive-tar-minitar (0.5.2)
     arel (2.0.10)
     bcrypt-ruby (2.1.4)
-    braintree (2.13.0)
+    braintree (2.13.1)
       builder (>= 2.0.0)
     builder (2.1.2)
     cancan (1.6.4)
-    capybara (1.1.1)
+    capybara (1.1.2)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
@@ -50,18 +56,18 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.2.2)
       ffi (~> 1.0.6)
-    columnize (0.3.4)
-    cucumber (1.1.2)
+    columnize (0.3.5)
+    cucumber (1.1.3)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
-      gherkin (~> 2.6.2)
+      gherkin (~> 2.6.7)
       json (>= 1.4.6)
       term-ansicolor (>= 1.0.6)
     cucumber-rails (1.2.0)
       capybara (>= 1.1.1)
       cucumber (>= 1.1.1)
       nokogiri (>= 1.5.0)
-    database_cleaner (0.6.7)
+    database_cleaner (0.7.0)
     devise (1.3.3)
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.3)
@@ -69,15 +75,15 @@ GEM
     diff-lcs (1.1.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    factory_girl (2.2.0)
+    factory_girl (2.3.2)
       activesupport
-    factory_girl_rails (1.3.0)
-      factory_girl (~> 2.2.0)
+    factory_girl_rails (1.4.0)
+      factory_girl (~> 2.3.0)
       railties (>= 3.0.0)
     faker (0.9.5)
       i18n (~> 0.4)
-    ffi (1.0.9)
-    gherkin (2.6.2)
+    ffi (1.0.11)
+    gherkin (2.6.8)
       json (>= 1.4.6)
     heroku (2.14.0)
       launchy (>= 0.3.2)
@@ -174,13 +180,13 @@ GEM
       archive-tar-minitar (>= 0.5.2)
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
-    rubyzip (0.9.4)
-    selenium-webdriver (2.10.0)
+    rubyzip (0.9.5)
+    selenium-webdriver (2.13.0)
       childprocess (>= 0.2.1)
-      ffi (= 1.0.9)
+      ffi (~> 1.0.9)
       json_pure
       rubyzip
-    sexp_processor (3.0.7)
+    sexp_processor (3.0.8)
     shoulda-matchers (1.0.0)
     simplecov (0.5.4)
       multi_json (~> 1.0.3)
@@ -259,5 +265,6 @@ DEPENDENCIES
   shoulda-matchers
   simplecov (>= 0.4.0)
   spree (= 0.60.3)
+  spree_articles!
   sqlite3
   webrat

@@ -1,0 +1,37 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <p><%= button_link_to t("new_article"), '/admin/articles/new', :icon => 'add' %></p>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+
+<h1><%= t("listing_articles") %></h1>
+
+
+<table class="index">
+  <thead>
+    <tr>
+      <th><%= t("title") %></th>
+      <th><%= t("content") %></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+    <tr>
+      <td><%= link_to article.title, admin_article_path(article) %></td>
+      <td><%= article.content %></td>
+      <td><%= link_to "Edit", edit_admin_article_path(article) %></td>
+      <td><%= button_to "Delete", admin_article_path(article), :method => :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
