@@ -15,6 +15,10 @@ module Articles
 
       # insert classes here
 
+#      Image.class_eval do
+#        belongs_to :article
+#      end
+
 
     end
 

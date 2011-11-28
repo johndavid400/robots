@@ -5,7 +5,6 @@ class Admin::ArticlesController < Admin::BaseController
 
   def new
     @article = Article.new
-    @taxons = Taxon.all
   end
 
   def create
@@ -20,6 +19,7 @@ class Admin::ArticlesController < Admin::BaseController
 
   def show
     @article = Article.find(params[:id])
+    redirect_to article_path(@article)
   end
 
   def edit
@@ -42,4 +42,27 @@ class Admin::ArticlesController < Admin::BaseController
     flash[:notice] = "Article Successfully deleted."
     redirect_to admin_articles_url
   end
+
+
+  def image_upload
+    @article = Article.find(params[:image][:viewable_id])
+    @article.images.create(params[:image])
+    if @article.save
+      redirect_to edit_admin_article_path(@article), :notice => "New article image uploaded successfully"
+    else
+      render "new"
+    end
+  end
+
+  def image_destroy
+    @image = Image.find(params[:id])
+
+    if @image.destroy
+      redirect_to :back, :notice => "Image destroyed."
+    else
+      render "new"
+    end
+  end
+
 end
+
