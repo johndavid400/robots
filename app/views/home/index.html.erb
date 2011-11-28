@@ -5,27 +5,39 @@ This is the new home for rediculouslygoodlooking.com. I needed to update my webs
 </p>
 
 
-  <!-- Simple AnythingSlider -->
+<!-- Simple AnythingSlider -->
 
-  <ul id="slider">
+<ul id="slider">
 
-    <li><img src="images/robotics/cover.jpg" width="800px" /></li>
-    <li>
-      <h2>The Gettysburg Address</h2>
-      <p />Four score and seven years ago
-    </li>
-    <li><img src="images/robotics/8.1.jpg" alt=""></li>
-    <li><img src="images/robotics/10.1.jpg" alt=""></li>
-    <li><img src="images/robotics/11.1.jpg" alt=""></li>
-    <li><img src="images/robotics/12.1.jpg" alt=""></li>
+  <li><img src="images/robotics/cover.jpg" width="800px" /></li>
+  <li>
+  <h2>The Gettysburg Address</h2>
+  <p />Four score and seven years ago
+  </li>
+  <li><img src="images/robotics/8.1.jpg" alt=""></li>
+  <li><img src="images/robotics/10.1.jpg" alt=""></li>
+  <li><img src="images/robotics/11.1.jpg" alt=""></li>
+  <li><img src="images/robotics/12.1.jpg" alt=""></li>
 
-  </ul>
+</ul>
 
-  <script>
-    // DOM Ready
-    $(function(){
-      $('#slider').anythingSlider();
-    });
-  </script>
+<script>
+  // DOM Ready
+  $(function(){
+    $('#slider').anythingSlider();
+  });
+</script>
 
+<p />
+<hr>
+<p />
 
+<% if !@articles.nil? %>
+  <% @articles.each do |article| %>
+    <div class="index_article">
+      <h3 class="article"><%= article.title %></h3>
+      <p />
+      <%= article.content.html_safe %>
+    </div>
+  <% end %>
+<% end %>

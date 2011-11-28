@@ -41,7 +41,7 @@
     </tr>
     <tr>
       <td><%= t("alt_text") %>:</td>
-      <td><%= f.text_field :alt, :value => "There is no image available" %></td>
+      <td><%= f.text_area :alt, :value => "There is no image available" %></td>
     </tr>
     <tr>
       <td><%= f.hidden_field :viewable_id, :value => @article.id %></td>
