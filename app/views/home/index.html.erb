@@ -38,6 +38,8 @@ This is the new home for rediculouslygoodlooking.com. I needed to update my webs
       <h3 class="article"><%= article.title %></h3>
       <p />
       <%= article.content.html_safe %>
+      <p />
+      <%= image_tag article.images.first.attachment.url %>
     </div>
   <% end %>
 <% end %>

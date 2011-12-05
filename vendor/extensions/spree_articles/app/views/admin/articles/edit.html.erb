@@ -63,7 +63,7 @@
   <h3>Current images:</h3>
   <% @article.images.each do |image| %>
     <ul>
-      <li><%= image_tag(image.attachment_file_name) %></li>
+      <li><%= image_tag image.attachment.url %></li>
       <li><%= link_to  "destroy", { :action => 'image_destroy', :id => image.id}, :method => :delete %></li>
     </ul>
   <% end %>
