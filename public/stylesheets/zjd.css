@@ -27,12 +27,12 @@
 }
 a.login_links {
   text-decoration: none;
-  text-color: #FFFFFF;
+  color: #FFFFFF;
   font-size: 16px;
 }
 a.login_links:hover {
   text-decoration: none;
-  text-color: red;
+  color: red;
   font-size: 16px;
 }
 
