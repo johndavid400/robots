@@ -39,7 +39,9 @@ This is the new home for rediculouslygoodlooking.com. I needed to update my webs
       <p />
       <%= article.content.html_safe %>
       <p />
-      <%= image_tag article.images.first.attachment.url %>
+      <% if !article.images.empty? %>
+        <%= image_tag article.images.first.attachment.url %>
+      <% end %>
     </div>
   <% end %>
 <% end %>

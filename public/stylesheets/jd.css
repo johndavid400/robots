@@ -39,3 +39,24 @@ h3.article {
   border-radius: 15px;
 }
 
+.log_in {
+  background: #C3C3C3;
+  border-radius: 15px;
+  width: 450px;
+  height: 30px;
+  position: absolute;
+  margin-top: -180px;
+  margin-left: 870px;
+	text-align: center;
+}
+
+.advertisement {
+  background: #C3C3C3;
+  position: absolute;
+  border-radius: 15px;
+  width: 450px;
+  height: 145px;
+  margin-top: -145px;
+  margin-left: 870px;
+	text-align: center;
+}
