@@ -32,14 +32,16 @@ This is the new home for rediculouslygoodlooking.com. I needed to update my webs
 <hr>
 <p />
 
-<% if !@articles.nil? %>
-  <% @articles.each do |article| %>
+<% if !@featured_articles.nil? %>
+  <% @featured_articles.each do |article| %>
 
     <div class="index_article">
       <h3 class="article"><%= article.title %></h3>
       <p />
       <% if !article.images.empty? %>
-          <%= image_tag article.images.first.attachment.url, :class => "index_article_image", :size => "330x245" %>
+        <div class="index_article_image">
+          <%= image_tag article.images.first.attachment.url, :class => "article_image", :size => "220x230" %>
+       </div>
       <% end %>
       <div class="index_article_text">
         <%= article.content.html_safe %>

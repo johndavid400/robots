@@ -66,7 +66,7 @@ div.title_tutorial{
 
 
 h3.article {
-  background-color: #565656;
+  background-color: #015E93;
 	text-align: center;
 	color:#000;
 	padding: 10px;
@@ -81,14 +81,25 @@ h3.article {
   background: #C3C3C3;
   position: relative;
   width: 950px;
-  height: 300px;
   margin: 10px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 10px;
   -moz-border-radius: 15px;
 }
 
 .index_article_image {
+  background: gray;
+  position: relative;
+  margin-top: -10px;
+  padding-top: 15px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  width: 250px;
+  -moz-border-radius: 15px;
+}
+
+.article_image {
   position: relative;
   margin-top: -10px;
   margin-left: 10px;
@@ -99,9 +110,29 @@ h3.article {
   background: white;
   position: relative;
   padding: 15px;
-  margin-top: -10px;
-  margin-left: 350px;
-  width: 560px;
-  height: 215px;
+  margin-top: -240px;
+  margin-left: 270px;
+  width: 640px;
+  height: 205px;
   -moz-border-radius: 15px;
+}
+
+.menu_project {
+  width: 400px;
+  height: 100px;
+}
+
+.menu_project_image {
+  position: relative;
+  margin-left: 5px;
+  width: 80px;
+  height: 80px;
+}
+
+.menu_project_text {
+  position: relative;
+  margin-left: 95px;
+  margin-top: -75px;
+  width: 300px;
+  height: 80px;
 }

@@ -1,6 +1,7 @@
 class ArticlesController < Spree::BaseController
   respond_to :html
   def index
+    @featured_articles = Article.all
     @search = Article.search(params[:search])
     @articles = @search.all
     respond_with(@articles)
@@ -8,10 +9,9 @@ class ArticlesController < Spree::BaseController
 
 
   def show
-    @article = Article.find_by_slug(params[:id])
+    @featured_articles = Article.all
+    @article = Article.find(params[:id])
     @related_articles = Article.all
-    @comment = Comment.new()
-    @comments = @article.comments
     @author = User.find(@article.user_id)
   end
 end
