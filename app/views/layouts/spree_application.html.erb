@@ -6,13 +6,15 @@
 <% end %>
 
   <div class="title"> 
-    <img id="title_bg" src="images/prototype_robotics/Logo_4.png" height="100%" width="100%" />
+    <img id="title_bg" src="images/prototype_robotics/Logo_4.png" height="160px" />
   </div>
 
   <div class="log_in"> 
-    <%= image_tag avatar_url(current_user), :size => "20x20", :class => "avatar" %>  
-    <% if current_user.has_role?("admin")  %>
-      <%= link_to t('admin_dashboard'), admin_path %> - 
+    <% if !current_user.nil? %>
+      <%= image_tag avatar_url(current_user), :size => "20x20", :class => "avatar" %>  
+      <% if current_user.has_role?("admin")  %>
+        <%= link_to t('admin_dashboard'), admin_path %> - 
+      <% end %>
     <% end %>
     <% if !current_user.nil? %>
       <%= link_to t('my_account'), account_path %> - 

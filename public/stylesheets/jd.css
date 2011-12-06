@@ -35,7 +35,7 @@ h3.article {
 	margin-top: 0px;
 	margin-left: auto;
 	margin-right: auto;
-  width: 500px;
+  width: 930px;
   border-radius: 15px;
 }
 
@@ -59,4 +59,33 @@ h3.article {
   margin-top: -145px;
   margin-left: 870px;
 	text-align: center;
+}
+
+.index_article {
+  background: #C3C3C3;
+  position: relative;
+  border-radius: 15px;
+  width: 950px;
+  height: 300px;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index_article_image {
+  position: relative;
+  margin-top: -10px;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+
+.index_article_text {
+  background: white;
+  position: relative;
+  padding: 15px;
+  margin-top: -10px;
+  margin-left: 350px;
+  width: 560px;
+  height: 215px;
+  border-radius: 15px;
 }
