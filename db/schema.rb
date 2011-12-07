@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111127013809) do
+ActiveRecord::Schema.define(:version => 20111207173250) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20111127013809) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "attachment_uid"
+    t.string   "attachment_name"
   end
 
   create_table "assets", :force => true do |t|
@@ -247,6 +249,17 @@ ActiveRecord::Schema.define(:version => 20111127013809) do
     t.string   "avs_response"
   end
 
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.integer  "user_id"
+    t.integer  "robot_id"
+    t.integer  "project_id"
+    t.boolean  "featured"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "preferences", :force => true do |t|
     t.string   "name",       :limit => 100, :null => false
     t.integer  "owner_id",   :limit => 30,  :null => false
@@ -336,6 +349,24 @@ ActiveRecord::Schema.define(:version => 20111127013809) do
 
   add_index "products_taxons", ["product_id"], :name => "index_products_taxons_on_product_id"
   add_index "products_taxons", ["taxon_id"], :name => "index_products_taxons_on_taxon_id"
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.string   "sensors"
+    t.string   "build_time"
+    t.string   "website"
+    t.string   "cost"
+    t.integer  "weight"
+    t.string   "microcontroller"
+    t.string   "power_source"
+    t.string   "motors"
+    t.string   "drive_type"
+    t.text     "comments"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "promotion_rules", :force => true do |t|
     t.integer  "promotion_id"

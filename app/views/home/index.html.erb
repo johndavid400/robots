@@ -38,13 +38,13 @@ This is the new home for rediculouslygoodlooking.com. I needed to update my webs
     <div class="index_article">
       <h3 class="article"><%= article.title %></h3>
       <p />
-      <% if !article.images.empty? %>
+      <% if !article.images.nil? %>
         <div class="index_article_image">
-          <%= image_tag article.images.first.attachment.url, :class => "article_image", :size => "220x230" %>
+          <%= image_tag article.images.first.attachment.url(:product), :class => "article_image" %>
        </div>
       <% end %>
       <div class="index_article_text">
-        <%= article.content.html_safe %>
+        <%=h truncate(article.content.html_safe, :length => 1350) %>
       </div>
     </div>
 

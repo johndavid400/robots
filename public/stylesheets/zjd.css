@@ -136,3 +136,35 @@ h3.article {
   width: 300px;
   height: 80px;
 }
+
+
+.projects {
+
+}
+
+.project { 
+  background: #C3C3C3;
+  position: relative;
+  width: 950px;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+  -moz-border-radius: 15px;
+}
+.project_image { 
+  position: relative;
+  margin-top: -10px;
+  margin-left: 10px;
+  -moz-border-radius: 15px;
+}
+.project_content { 
+  background: white;
+  position: relative;
+  padding: 15px;
+  margin-top: -240px;
+  margin-left: 270px;
+  width: 640px;
+  height: 205px;
+  -moz-border-radius: 15px;
+}

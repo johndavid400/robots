@@ -1,2 +1,20 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<h1>Projects</h1>
+
+<ul class="projects">
+  <% if !@projects.nil? %>
+    <% @projects.each do |project| %>
+      <div class="project">
+        <% if !project.images.empty? %>
+          <div class="project_image">
+            <%= image_tag project.images.first.attachment.url, :class => "project_image", :size => "220x230" %>
+          </div>
+        <% end %>
+        <div class="project_content">
+          <%= project.name %>
+          <%= project.user_id %>
+          <%= project.comments %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</ul>

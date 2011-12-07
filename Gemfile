@@ -4,7 +4,6 @@ gem 'rails', '3.0.9'
 gem 'spree', '0.60.3'
 #gem 'mysql2', '0.2.17'
 gem 'sqlite3'
-gem 'heroku'
 
 group :development, :test do
 
@@ -28,4 +27,6 @@ group :development, :test do
 
 end
 
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~>0.9.8'
 gem 'spree_articles', :path => 'vendor/extensions/spree_articles'
