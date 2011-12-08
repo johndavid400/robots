@@ -39,7 +39,7 @@
       <ul class="greybox">
         <li><a href="#">carpentry</a></li>
         <li><a href="#">electrical</a></li>
-        <li><a href="#">electrical</a></li>
+        <li><a href="#">plumbing</a></li>
         <li><a href="#">painting</a></li>
       </ul>   
     </div>
@@ -66,7 +66,7 @@
               <%= link_to image_tag(article.images.first.attachment.url(:mini), :class => "imgshadow"), article_path(article) %>
             </div>
             <div class="menu_project_text">
-              <b><u><%= article.title.html_safe %></u></b>: %nbsp;
+              <b><u><%= article.title.html_safe %></u></b>:
               <%=h truncate(article.content.html_safe, :length => 180) %>
             </div>
           </div>
@@ -81,7 +81,7 @@
 
 
 
-  <li><a href="#" class="drop">Products</a>
+  <li><%= link_to "Store", products_path %>
   <div class="dropdown_1column">
     <div class="col_1">
       <ul class="simple">
