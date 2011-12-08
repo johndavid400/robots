@@ -11,6 +11,9 @@
       <p><a href="http://www.uab.edu/uabmagazine/fall2010/departments/alumni">UAB alumni magazine</a></p>
       <p><a href="http://www.wired.com/magazine/2011/03/ff_makestuff_projects/">Wired Magazine - 21 Awesome Hacks (#18)</a></p>
       <p><a href="http://www.amazon.com/Arduino-Robotics-John-David-Warren/dp/1430231831">Arduino Robotics (my new book)</a></p>
+      <p>And a few videos:</p>
+      <p><a href="http://blog.makezine.com/archive/2011/07/the-latest-in-arduino-episode-2.html">MAKE: Latest in Arduino (02)</a></p>
+      <p><a href="http://www.youtube.com/watch?v=uhDou04jj7Q">MAKE: Latest in Arduino (03)</a></p>
     </div>
     <div class="col_2">
       <h2>Website focus:</h2>
@@ -63,7 +66,7 @@
         <% @featured_articles.each do |article| %>
           <div class="menu_project">
             <div class="menu_project_image">
-              <%= link_to image_tag(article.images.first.attachment.url(:mini), :class => "imgshadow"), article_path(article) %>
+              <%= link_to image_tag(article.images.first.attachment.url(:thumb), :class => "imgshadow"), article_path(article) %>
             </div>
             <div class="menu_project_text">
               <b><u><%= article.title.html_safe %></u></b>:

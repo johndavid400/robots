@@ -40,7 +40,7 @@ This is the new home for rediculouslygoodlooking.com. I needed to update my webs
       <p />
       <% if !article.images.nil? %>
         <div class="index_article_image">
-          <%= image_tag article.images.first.attachment.url(:product), :class => "article_image" %>
+          <%= image_tag article.images.first.attachment.url(:medium), :class => "article_image" %>
        </div>
       <% end %>
       <div class="index_article_text">
