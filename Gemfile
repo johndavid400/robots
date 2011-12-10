@@ -6,6 +6,7 @@ gem 'spree', '0.70.0'
 gem 'sqlite3'
 gem 'execjs'
 gem 'therubyracer'
+gem 'forem', :git => "git://github.com/radar/forem.git"
 
 group :development, :test do
 
@@ -28,3 +29,7 @@ group :development, :test do
   gem "webrat"
 
 end
+
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~>0.9.8'
+gem 'spree_articles', :path => 'vendor/extensions/spree_articles'

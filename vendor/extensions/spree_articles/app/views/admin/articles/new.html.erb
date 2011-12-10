@@ -1,0 +1,30 @@
+<%= form_for([:admin, @article]) do |f| %>
+  <% if @article.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @article.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<p>
+  <%= f.label :title %><br />
+  <%= f.text_field :title %>
+  </p>
+  <p>
+  <%= f.label :content %><br />
+  <%= f.text_area :content, :size => "150x20",:class => "rich_text_editor" %>
+  </p>
+  <p>
+  <%= f.label :featured %><br />
+  <%= f.check_box :featured %>
+  </p>
+  <p class="button"><%= f.submit %></p>
+<% end %>
+
+
+  <p>
+  <%= link_to "Cancel", admin_articles_path %>
+  </p>

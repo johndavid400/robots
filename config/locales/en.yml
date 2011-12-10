@@ -3,3 +3,10 @@
 
 en:
   hello: "Hello world"
+  articles: "Articles"
+  new_article: "New article"
+  listing_articles: "Listing Articles"
+  text: "Text"
+  upload: "Upload image" 
+  edit: "Edit"
+  new: "Create"

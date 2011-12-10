@@ -1,0 +1,71 @@
+<%= form_for([:admin, @article]) do |f| %>
+  <% if @article.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @article.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+  <%= f.label :title %><br />
+  <%= f.text_field :title %>
+  </p>
+  <p>
+  <%= f.label :content %><br />
+  <%= f.text_area :content, :size => "150x20",:class => "rich_text_editor" %>
+  </p>
+  <p>
+  <p>
+  <%= f.label :featured %><br />
+  <%= f.check_box :featured %>
+  </p>
+  <p class="button"><%= f.submit %></p>
+<% end %>
+
+
+<p>
+<%= link_to "Cancel", admin_articles_path %>
+</p>
+
+
+<%= form_for(:image, :url => { :controller => 'articles', :action => 'image_upload', :method => :post}, :html => { :multipart => true }) do |f| %>
+
+  <table class="basic-table">
+    <h3>Article images</h3>
+    <tr>
+      <td><%= t("filename") %>:</td>
+      <td><%= f.file_field :attachment %></td>
+    </tr>
+    <tr>
+      <td><%= t("alt_text") %>:</td>
+      <td><%= f.text_area :alt, :value => "There is no image available" %></td>
+    </tr>
+    <tr>
+      <td><%= f.hidden_field :viewable_id, :value => @article.id %></td>
+    </tr>
+  </table>
+
+  <p class="form-buttons">
+  <% if @status == true %>
+    <button id="upload" type="submit">
+      <span>Upload Image</span>
+    </button>
+  <% else %>
+    <%= button t("upload") %>
+  <% end %>
+  <%= t('or') %> <%= link_to t("cancel"), "#", :id => "cancel_link" %>
+  </p>
+<% end %>
+
+<h3>Current images:</h3>
+<% if !@article.images.nil? %>
+  <% @article.images.each do |image| %>
+    <ul>
+      <li><%= image_tag image.attachment.url %></li>
+      <li><%= link_to  "destroy", { :action => 'image_destroy', :id => image.id}, :method => :delete %></li>
+    </ul>
+  <% end %>
+<% end %>

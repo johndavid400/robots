@@ -1,4 +1,53 @@
 /*------------------- JD's styles --------------------------*/
+#header {
+  background: gray;
+  position: relative;
+  width: 990px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title_image {
+	position: relative;
+  background-color: #565656;
+	text-align: center;
+  width: 50%;
+	color:#000;
+	padding: 10px;
+  -moz-border-radius: 15px;
+}
+
+.log_in {
+  position: relative;
+	text-align: center;
+  width: 46%;
+  height: 30px;
+  margin-top: -180px;
+  margin-left: 530px;
+}
+a.login_links {
+  text-decoration: none;
+  text-color: #FFFFFF;
+  font-size: 16px;
+}
+a.login_links:hover {
+  text-decoration: none;
+  text-color: red;
+  font-size: 16px;
+}
+
+.advertisement {
+  position: relative;
+  background: #C3C3C3;
+	text-align: center;
+  width: 46%;
+  height: 145px;
+  margin-top: 5px;
+  margin-left: 530px;
+  -moz-border-radius: 15px;
+}
+
+/*//////////////////////////////*/
 
 div.title_tutorial{
   position: relative;
@@ -12,17 +61,47 @@ div.title_tutorial{
 	color: #D9D4CC;
 	font-size: 20;
 	text-align: center;
-  border-radius: 15px;
+  -moz-border-radius: 15px;
 	}
 
-.title {
-	position: relative;
+
+h3.article {
   background-color: #565656;
 	text-align: center;
 	color:#000;
 	padding: 10px;
 	margin-top: 0px;
-	margin-left: 340px;
-  width: 500px;
-  border-radius: 15px;
+	margin-left: auto;
+	margin-right: auto;
+  width: 930px;
+  -moz-border-radius: 15px;
+}
+
+.index_article {
+  background: #C3C3C3;
+  position: relative;
+  width: 950px;
+  height: 300px;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  -moz-border-radius: 15px;
+}
+
+.index_article_image {
+  position: relative;
+  margin-top: -10px;
+  margin-left: 10px;
+  -moz-border-radius: 15px;
+}
+
+.index_article_text {
+  background: white;
+  position: relative;
+  padding: 15px;
+  margin-top: -10px;
+  margin-left: 350px;
+  width: 560px;
+  height: 215px;
+  -moz-border-radius: 15px;
 }
