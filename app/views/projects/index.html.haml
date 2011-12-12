@@ -7,28 +7,8 @@
 .projects
   - @projects.each do |project|
     .project_image
-      = if !project.images.empty? 
-        = image_tag project.images.first.attachment.url(:medium), :class => "project_image"
-    .project_content
-      %p
+      - if !project.images.empty? 
+        = link_to image_tag(project.images.first.attachment.url(:medium), :class => "project_image"), project_path(project)
+    .project_caption
+      %h3
       = project.name
-      %p
-      = project.type
-      %p
-      = project.microcontroller
-      %p
-      = project.build_time
-      %p
-      = project.website
-      %p
-      = project.cost
-      %p
-      = project.sensors
-      %p
-      = project.weight
-      %p
-      = project.motors
-      %p
-      = project.drive_type
-      %p
-

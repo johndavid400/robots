@@ -138,14 +138,12 @@ h3.article {
 }
 
 .projects { 
-  background: #C3C3C3;
+  border: solid #C3C3C3 2px;
   position: relative;
-  width: 950px;
+  width: 250px;
   margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 5px;
   -moz-border-radius: 15px;
 }
 .project_image { 
@@ -154,13 +152,16 @@ h3.article {
   margin-left: 10px;
   -moz-border-radius: 15px;
 }
-.project_content { 
+.project_caption { 
   background: white;
   position: relative;
-  padding: 15px;
-  margin-left: 360px;
-  width: 550px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
   -moz-border-radius: 15px;
+  width: 240px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #form_left {
@@ -174,7 +175,13 @@ h3.article {
   margin-top: -552px;
 }
 
-.form_container {
+.new_form_container {
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 50px;
+}
+
+.edit_form_container {
   padding-bottom: 100px;
   padding-left: 100px;
   padding-top: 50px;
@@ -191,7 +198,4 @@ h3.article {
   position: relative;
   margin-top: 100px; 
 }
-
-
-
 
