@@ -1,9 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.9'
-gem 'spree', '0.60.3'
+gem 'rails', '3.1.1'
+gem 'spree', '0.70.0'
 #gem 'mysql2', '0.2.17'
 gem 'sqlite3'
+gem 'execjs'
+gem 'therubyracer'
+gem 'forem', :git => "git://github.com/radar/forem.git"
 
 group :development, :test do
 

@@ -1,4 +1,5 @@
 Robots::Application.routes.draw do
+  mount Forem::Engine, :at => "/forums"
 
   resources :projects
   resources :robots

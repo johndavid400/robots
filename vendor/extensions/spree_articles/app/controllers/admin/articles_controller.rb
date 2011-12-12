@@ -1,5 +1,5 @@
 class Admin::ArticlesController < Admin::BaseController
-  uses_yui_editor
+  # uses_yui_editor
   def index
     @articles = Article.all
   end

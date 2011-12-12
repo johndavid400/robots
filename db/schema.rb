@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111207173250) do
+ActiveRecord::Schema.define(:version => 20111210212470) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -116,6 +117,57 @@ ActiveRecord::Schema.define(:version => 20111207173250) do
     t.string   "gateway_customer_profile_id"
     t.string   "gateway_payment_profile_id"
   end
+
+  create_table "forem_categories", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "forem_forums", :force => true do |t|
+    t.string  "title"
+    t.text    "description"
+    t.integer "category_id"
+  end
+
+  create_table "forem_posts", :force => true do |t|
+    t.integer  "topic_id"
+    t.text     "text"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "reply_to_id"
+  end
+
+  add_index "forem_posts", ["reply_to_id"], :name => "index_forem_posts_on_reply_to_id"
+  add_index "forem_posts", ["topic_id"], :name => "index_forem_posts_on_topic_id"
+  add_index "forem_posts", ["user_id"], :name => "index_forem_posts_on_user_id"
+
+  create_table "forem_topics", :force => true do |t|
+    t.integer  "forum_id"
+    t.integer  "user_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "locked",     :default => false, :null => false
+    t.boolean  "pinned",     :default => false
+    t.boolean  "hidden",     :default => false
+  end
+
+  add_index "forem_topics", ["forum_id"], :name => "index_forem_topics_on_forum_id"
+  add_index "forem_topics", ["user_id"], :name => "index_forem_topics_on_user_id"
+
+  create_table "forem_views", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "count",      :default => 0
+  end
+
+  add_index "forem_views", ["topic_id"], :name => "index_forem_views_on_topic_id"
+  add_index "forem_views", ["updated_at"], :name => "index_forem_views_on_updated_at"
+  add_index "forem_views", ["user_id"], :name => "index_forem_views_on_user_id"
 
   create_table "gateways", :force => true do |t|
     t.string   "type"
@@ -567,8 +619,8 @@ ActiveRecord::Schema.define(:version => 20111207173250) do
     t.string   "persistence_token"
     t.string   "reset_password_token"
     t.string   "perishable_token"
-    t.integer  "sign_in_count",                       :default => 0, :null => false
-    t.integer  "failed_attempts",                     :default => 0, :null => false
+    t.integer  "sign_in_count",                       :default => 0,     :null => false
+    t.integer  "failed_attempts",                     :default => 0,     :null => false
     t.datetime "last_request_at"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -581,6 +633,7 @@ ActiveRecord::Schema.define(:version => 20111207173250) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.datetime "remember_created_at"
+    t.boolean  "forem_admin",                         :default => false
   end
 
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
