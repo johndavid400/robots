@@ -1,0 +1,30 @@
+%h1 Projects
+
+.projects
+  - @projects.each do |project|
+    .project_image
+      = if !project.images.empty? 
+        = image_tag project.images.first.attachment.url, :class => "project_image", :size => "220x230"
+    .project_content
+      %p
+      = project.name
+      %p
+      = project.type
+      %p
+      = project.microcontroller
+      %p
+      = project.build_time
+      %p
+      = project.website
+      %p
+      = project.cost
+      %p
+      = project.sensors
+      %p
+      = project.weight
+      %p
+      = project.motors
+      %p
+      = project.drive_type
+      %p
+
