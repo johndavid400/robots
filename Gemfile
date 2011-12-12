@@ -7,6 +7,7 @@ gem 'sqlite3'
 gem 'execjs'
 gem 'therubyracer'
 gem 'forem', :git => "git://github.com/radar/forem.git"
+gem 'haml'
 
 group :development, :test do
 

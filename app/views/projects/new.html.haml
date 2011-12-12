@@ -1,0 +1,49 @@
+%center
+  %h1 New Project
+  %p
+.form_container
+  = form_for(@project) do |f|
+    #form_left
+      = f.label 'Name' 
+      .form_field= f.text_field :name
+      %p
+      = f.label 'Type'
+      .form_field= f.text_field :type
+      %p
+      = f.label 'Build-time'
+      .form_field= f.text_field :build_time
+      %p
+      = f.label 'Cost to build (appx)'
+      .form_field= f.text_field :cost
+      %p
+      = f.label 'Weight'
+      .form_field= f.text_field :weight
+      %p
+      = f.label 'Microcontroller'
+      .form_field= f.text_field :microcontroller
+      %p
+      = f.label 'Power Source'
+      .form_field= f.text_field :power_source
+      %p
+      = f.label 'Motors'
+      .form_field= f.text_field :motors
+      %p
+      = f.label 'Drive type'
+      .form_field= f.text_field :drive_type
+      %p
+
+    #form_right
+      = f.label 'Website'
+      .form_field= f.text_field :website
+      %p
+      = f.label 'Comments'
+      .form_field= f.text_area :comments
+      %p
+      = if !current_user.nil?
+        .form_field= f.hidden_field :user_id, :value => current_user.id
+        %p
+
+      #submit
+        = f.submit
+        %p
+        = link_to 'Back', projects_path

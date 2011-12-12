@@ -18,6 +18,7 @@ class RobotsController < Spree::BaseController
     if @robot.save
       flash[:notice] = "Robot created successfully."
     end
+    redirect_to robots_path
   end
 
   def edit

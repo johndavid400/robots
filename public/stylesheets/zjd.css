@@ -168,3 +168,22 @@ h3.article {
   height: 205px;
   -moz-border-radius: 15px;
 }
+
+#form_left {
+  position: relative;
+  margin-left: 0px;
+}
+
+#form_right {
+  position: relative;
+  margin-left: 400px;
+  margin-top: -552px;
+}
+
+.form_container {
+  padding-bottom: 100px;
+  padding-left: 100px;
+  padding-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
