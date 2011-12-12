@@ -1,10 +1,14 @@
 %h1 Projects
 
+- if !current_user.nil?
+  .new_project
+    = link_to "New Project", new_project_path
+
 .projects
   - @projects.each do |project|
     .project_image
       = if !project.images.empty? 
-        = image_tag project.images.first.attachment.url, :class => "project_image", :size => "220x230"
+        = image_tag project.images.first.attachment.url(:medium), :class => "project_image"
     .project_content
       %p
       = project.name

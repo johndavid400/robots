@@ -1,0 +1,79 @@
+.form_container
+  %h1 Edit Project
+  %p
+  = form_for(@project) do |f|
+    #form_left
+      = f.label 'Name' 
+      .form_field= f.text_field :name
+      %p
+      = f.label 'Type'
+      .form_field= f.text_field :type
+      %p
+      = f.label 'Build-time'
+      .form_field= f.text_field :build_time
+      %p
+      = f.label 'Cost to build (appx)'
+      .form_field= f.text_field :cost
+      %p
+      = f.label 'Weight'
+      .form_field= f.text_field :weight
+      %p
+      = f.label 'Microcontroller'
+      .form_field= f.text_field :microcontroller
+      %p
+      = f.label 'Power Source'
+      .form_field= f.text_field :power_source
+      %p
+      = f.label 'Motors'
+      .form_field= f.text_field :motors
+      %p
+      = f.label 'Drive type'
+      .form_field= f.text_field :drive_type
+      %p
+
+    #form_right
+      = f.label 'Website'
+      .form_field= f.text_field :website
+      %p
+      = f.label 'Comments'
+      .form_field= f.text_area :comments
+      %p
+      - if !current_user.nil?
+        .form_field= f.hidden_field :user_id, :value => current_user.id
+        %p
+
+      #submit
+        = f.submit
+        %p
+        = link_to 'Back', projects_path
+
+  .images
+    = form_for(:image, :url => { :controller => 'projects', :action => 'image_upload', :method => :post}, :html => { :multipart => true }) do |f|
+      %table.basic-table
+        %h1 Project images
+        %tr
+          %td
+            = t("filename")
+            \:
+          %td= f.file_field :attachment
+        %tr
+          %td
+            = t("alt_text")
+            \:
+          %td= f.text_area :alt, :value => "There is no image available"
+        %tr
+          %td= f.hidden_field :viewable_id, :value => @project.id
+      %p.form-buttons
+        - if @status == true
+          %button#upload{:type => "submit"}
+            %span Upload Image
+        - else
+          = button t("upload")
+        = t('or')
+        = link_to t("cancel"), "#", :id => "cancel_link"
+    %h3 Current images:
+    - if !@project.images.nil?
+      - @project.images.each do |image|
+        %ul
+          %li= image_tag image.attachment.url
+          %li= link_to  "destroy", { :action => 'image_destroy', :id => image.id}, :method => :delete
