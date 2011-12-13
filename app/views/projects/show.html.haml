@@ -1,0 +1,23 @@
+%center
+  %h1= @project.name
+.project
+  - if !@project.images.empty? 
+    = image_tag(@project.images.first.attachment.url(:medium), :class => "project_image")
+  - else
+    = image_tag(Image.first.attachment.url(:medium), :class => "project_image")
+  .project_content
+    %ul
+      %h3
+        %li= @project.name
+      %li= @project.type
+      %li= @project.sensors
+      %li= @project.build_time
+      %li= @project.website
+      %li= @project.cost
+      %li= @project.weight
+      %li= @project.microcontroller
+      %li= @project.power_source
+      %li= @project.motors
+      %li= @project.drive_type
+      %li= @project.comments
+
