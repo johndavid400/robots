@@ -1,14 +1,17 @@
-%h1 Projects
+%center
+  %h1 Projects Listing
 
 - if !current_user.nil?
   .new_project
     = link_to "New Project", new_project_path
 
-.projects
+.project_index
   - @projects.each do |project|
-    .project_image
-      - if !project.images.empty? 
-        = link_to image_tag(project.images.first.attachment.url(:medium), :class => "project_image"), project_path(project)
-    .project_caption
-      %h3
-      = project.name
+    .test
+      .projects
+        - if !project.images.empty? 
+          = link_to image_tag(project.images.first.attachment.url(:medium), :class => "project_image"), project_path(project)
+        - else
+          = link_to image_tag(Image.first.attachment.url(:medium), :class => "project_image"), project_path(project)
+        .project_caption
+          %h3= project.name

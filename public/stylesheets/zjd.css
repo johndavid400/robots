@@ -137,19 +137,27 @@ h3.article {
   height: 80px;
 }
 
+.project_index {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .projects { 
+  float: left;
   border: solid #C3C3C3 2px;
-  position: relative;
-  width: 250px;
-  margin: 10px;
+  width: 275px;
+  margin-left: 25px;
+  margin-bottom: 25px;
   padding-top: 30px;
   padding-bottom: 5px;
   -moz-border-radius: 15px;
 }
 .project_image { 
-  position: relative;
+  display: block;
   margin-top: -10px;
-  margin-left: 10px;
+  margin-left: auto;
+  margin-right: auto;
   -moz-border-radius: 15px;
 }
 .project_caption { 
@@ -160,8 +168,6 @@ h3.article {
   font-size: 15px;
   -moz-border-radius: 15px;
   width: 240px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #form_left {

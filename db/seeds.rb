@@ -4,6 +4,8 @@ Rake::Task["db:load_dir"].invoke( "default" )
 u = User.create :email => "jd@jd.com", :password => "password", :password_confirmation => "password"
 u.roles << Role.first
 
+Image.create(:attachment => File.open(File.join(Rails.root, "db", "seeds", "images", "robot.jpg")))
+
 a = Article.create :title => "Test Article", :content => "Master cleanse helvetica cardigan iphone, food truck cred freegan art party raw denim thundercats keytar mustache dreamcatcher. Master cleanse high life fixie, portland freegan marfa jean shorts. Vegan photo booth raw denim, four loko put a bird on it DIY tofu cred 8-bit mlkshk. Shoreditch Austin hoodie, locavore banksy carles cardigan farm-to-table sustainable ethical skateboard williamsburg sartorial mustache butcher. Portland cred blog, mustache retro biodiesel you probably haven't heard of them. Cosby sweater four loko sustainable blog, butcher keytar mixtape. American apparel wayfarers banksy, sustainable aesthetic butcher quinoa.", :featured => true
 a.images.create(:attachment => File.open(File.join(Rails.root, "db", "seeds", "images", "robot.jpg")))
 
@@ -39,6 +41,21 @@ d = Product.create :name => "Robot Electronics kit", :price => "199.99", :permal
 d.images.create(:attachment => File.open(File.join(Rails.root, "db", "seeds", "images", "kit.jpg")))
 d.taxons << Taxon.find_by_name("Robot kits")
 d.save
+
+e = Project.create :name => "Lawnbot400", :comments => "This is a remote controlled lawnmower, capable of mowing grass for 6-8hrs.", :type => "differential", :build_time => "6 months", :website => "prototyperobotics.com", :weight => "200lbs", :sensors => "none", :microcontroller => "Arduino", :power_source => "24vdc marine deep cycle batteries", :motors => "DC power wheelchair gear motors", :user_id => User.first
+e.images.create(:attachment => File.open(File.join(Rails.root, "db", "seeds", "images", "robot.jpg")))
+
+f = Project.create :name => "Segbot", :comments => "This is a rideable segway clone", :type => "differential", :build_time => "1 month", :website => "prototyperobotics.com", :weight => "75lbs", :sensors => "gyroscope and accelerometer", :microcontroller => "Arduino", :power_source => "24vdc SLA batteries", :motors => "DC power wheelchair gear motors", :user_id => User.first
+f.images.create(:attachment => File.open(File.join(Rails.root, "db", "seeds", "images", "robot.jpg")))
+
+g = Project.create :name => "Explorer Bot", :comments => "This is a rideable segway clone", :type => "differential", :build_time => "1 month", :website => "prototyperobotics.com", :weight => "75lbs", :sensors => "gyroscope and accelerometer", :microcontroller => "Arduino", :power_source => "24vdc SLA batteries", :motors => "DC power wheelchair gear motors", :user_id => User.first
+g.images.create(:attachment => File.open(File.join(Rails.root, "db", "seeds", "images", "robot.jpg")))
+
+h = Project.create :name => "Line Bot", :comments => "This is a rideable segway clone", :type => "differential", :build_time => "1 month", :website => "prototyperobotics.com", :weight => "75lbs", :sensors => "gyroscope and accelerometer", :microcontroller => "Arduino", :power_source => "24vdc SLA batteries", :motors => "DC power wheelchair gear motors", :user_id => User.first
+h.images.create(:attachment => File.open(File.join(Rails.root, "db", "seeds", "images", "robot.jpg")))
+
+j = Project.create :name => "Battle Bot", :comments => "This is a rideable segway clone", :type => "differential", :build_time => "1 month", :website => "prototyperobotics.com", :weight => "75lbs", :sensors => "gyroscope and accelerometer", :microcontroller => "Arduino", :power_source => "24vdc SLA batteries", :motors => "DC power wheelchair gear motors", :user_id => User.first
+j.images.create(:attachment => File.open(File.join(Rails.root, "db", "seeds", "images", "robot.jpg")))
 
 puts "Default data has been loaded"
 
